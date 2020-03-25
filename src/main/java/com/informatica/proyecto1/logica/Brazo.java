@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package presentacion;
-
-// import logica;
+package com.informatica.proyecto1.logica;
 
 /**
  *
  * @author harol
  */
-public class Modelo {
+public class Brazo {
     
 }
