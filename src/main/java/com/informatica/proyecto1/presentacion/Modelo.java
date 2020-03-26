@@ -93,6 +93,32 @@ public class Modelo implements Runnable {
         run();
     }
     
+    
+    public void girarMano(){
+        int alphaGrados = getVentanaApp().getSldMano().getValue();
+        System.out.println("Grados: " + alphaGrados);
+        getBrazo().girarMano(alphaGrados);
+        run();
+    }
+    
+    
+    public void girarAnteBrazo(){
+        int alphaGrados = getVentanaApp().getSldAnteBrazo().getValue();
+        System.out.println("Grados: " + alphaGrados);
+        getBrazo().girarAnteBrazo(alphaGrados);
+        run();
+    }
+    
+    
+    public void girarBrazo(){
+        int alphaGrados = getVentanaApp().getSldBrazo().getValue();
+        System.out.println("Grados: " + alphaGrados);
+        getBrazo().girarBrazo(alphaGrados);
+        run();
+    }
+    
+    
+    
     private void dibujar(){
         getVentanaApp().getLienzo().getGraphics().clearRect(0, 0, Constantes.ANCHO_MAXIMO_CANVAS, Constantes.ALTO_MAXIMO_CANVAS);
         System.out.println("Diujando...");

@@ -118,7 +118,7 @@ public class Linea {
     }
     
     
-    public void draw(Graphics lapiz){
+    public void dibujar(Graphics lapiz){
         Graphics2D lapiz2D = (Graphics2D) lapiz;
         lapiz2D.setStroke(new BasicStroke(5));//Se aumenta anco de la liena
         lapiz2D.setColor(Color.BLACK);

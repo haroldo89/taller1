@@ -53,7 +53,24 @@ public class Controlador implements ChangeListener{
             modelo.girarFalProxDer();
             
         }
-        
+        else if(e.getSource().equals(ventana.getSldMano())){
+            System.out.println("Mano");
+            //Mover la mano
+            modelo.girarMano();
+            
+        }
+        else if(e.getSource().equals(ventana.getSldAnteBrazo())){
+            System.out.println("Antebrazo");
+            //Mover el antebrazo
+            modelo.girarAnteBrazo();
+            
+        }
+        else if(e.getSource().equals(ventana.getSldBrazo())){
+            System.out.println("Brazo");
+            //Mover el antebrazo
+            modelo.girarBrazo();
+            
+        }
         
         
     }

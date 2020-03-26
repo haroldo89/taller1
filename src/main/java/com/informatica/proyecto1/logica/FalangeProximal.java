@@ -34,10 +34,13 @@ public class FalangeProximal {
     
      public void cambiarCoordBase(int xn, int yn){
         huesofalangeProximal.cambiarCoordenadasBase(xn, yn);
+        int xnf = huesofalangeProximal.getX0();
+        int ynf= huesofalangeProximal.getY0();
+        falangeDitial.cambiarCoordBase(xnf, ynf);
     }
     
     public void dibujar(Graphics lapiz){
-        huesofalangeProximal.draw(lapiz);
+        huesofalangeProximal.dibujar(lapiz);
     }
     
     

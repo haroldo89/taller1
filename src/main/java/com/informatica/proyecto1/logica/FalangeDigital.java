@@ -33,7 +33,7 @@ public class FalangeDigital {
     }
     
     public void dibujar(Graphics lapiz){
-        huesofalangeDigital.draw(lapiz);
+        huesofalangeDigital.dibujar(lapiz);
     }
     
     //GETTERS
