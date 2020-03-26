@@ -27,9 +27,18 @@ public class Controlador implements ChangeListener{
     //CHANGELISTENER METHOD
     @Override
     public void stateChanged(ChangeEvent e) {
-        //Sección A
-        if(e.getSource().equals(ventana.getSldrSeccionA())){
-            //Mover la sección A
+        //Falange dig izq
+        System.out.println("Entro a cambio de estado..");
+        if(e.getSource().equals(ventana.getSldrFalangeDigIzq())){
+            System.out.println("Falange dig izq");
+            //Mover la falange dig izq
+            modelo.girarFalDigIzq();
+            
+        }
+        else if(e.getSource().equals(ventana.getSldFalangeDigDer())){
+            System.out.println("Falange dig der");
+            //Mover la falange dig izq
+            modelo.girarFalDigDer();
             
         }
     }

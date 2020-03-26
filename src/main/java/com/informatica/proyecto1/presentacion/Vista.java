@@ -38,8 +38,17 @@ public class Vista extends javax.swing.JFrame {
     public Vista(Modelo m) {
         modelo = m;
         initComponents();
+        asignarEventos();
     }
 
+    
+    
+    private void asignarEventos() {
+        sldFalangeDigIzq.addChangeListener(getControl());
+        sldFalangeDigDer.addChangeListener(getControl());
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,9 +61,12 @@ public class Vista extends javax.swing.JFrame {
         PanelCanvas = new javax.swing.JPanel();
         lienzo = new java.awt.Canvas();
         PanelControles = new javax.swing.JPanel();
-        sldrSeccionA = new javax.swing.JSlider();
+        sldFalangeDigIzq = new javax.swing.JSlider();
+        sldFalangeDigDer = new javax.swing.JSlider();
+        lblFalanges = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(600, 350));
 
         PanelCanvas.setBackground(new java.awt.Color(255, 255, 255));
         PanelCanvas.setPreferredSize(new java.awt.Dimension(300, 300));
@@ -84,17 +96,31 @@ public class Vista extends javax.swing.JFrame {
         PanelControles.setBackground(new java.awt.Color(255, 255, 255));
         PanelControles.setPreferredSize(new java.awt.Dimension(200, 300));
 
-        sldrSeccionA.setMaximum(180);
-        sldrSeccionA.setMinimum(-180);
-        sldrSeccionA.setPaintLabels(true);
-        sldrSeccionA.setPaintTicks(true);
-        sldrSeccionA.setSnapToTicks(true);
-        sldrSeccionA.setToolTipText("Sección A");
-        sldrSeccionA.setValue(0);
-        sldrSeccionA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        sldrSeccionA.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        sldrSeccionA.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
-        sldrSeccionA.setName("Sección A"); // NOI18N
+        sldFalangeDigIzq.setMaximum(180);
+        sldFalangeDigIzq.setMinimum(-180);
+        sldFalangeDigIzq.setPaintLabels(true);
+        sldFalangeDigIzq.setPaintTicks(true);
+        sldFalangeDigIzq.setSnapToTicks(true);
+        sldFalangeDigIzq.setToolTipText("Falange Dig Izq");
+        sldFalangeDigIzq.setValue(0);
+        sldFalangeDigIzq.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        sldFalangeDigIzq.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        sldFalangeDigIzq.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        sldFalangeDigIzq.setName("Falange Dig Izq"); // NOI18N
+
+        sldFalangeDigDer.setMaximum(180);
+        sldFalangeDigDer.setMinimum(-180);
+        sldFalangeDigDer.setPaintLabels(true);
+        sldFalangeDigDer.setPaintTicks(true);
+        sldFalangeDigDer.setSnapToTicks(true);
+        sldFalangeDigDer.setToolTipText("Falange Dig Izq");
+        sldFalangeDigDer.setValue(0);
+        sldFalangeDigDer.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        sldFalangeDigDer.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        sldFalangeDigDer.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
+        sldFalangeDigDer.setName("Falange Dig Izq"); // NOI18N
+
+        lblFalanges.setText("Falanges Digitales:");
 
         javax.swing.GroupLayout PanelControlesLayout = new javax.swing.GroupLayout(PanelControles);
         PanelControles.setLayout(PanelControlesLayout);
@@ -102,18 +128,29 @@ public class Vista extends javax.swing.JFrame {
             PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelControlesLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(sldrSeccionA, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelControlesLayout.createSequentialGroup()
+                        .addComponent(sldFalangeDigIzq, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sldFalangeDigDer, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
+                    .addGroup(PanelControlesLayout.createSequentialGroup()
+                        .addComponent(lblFalanges)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         PanelControlesLayout.setVerticalGroup(
             PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelControlesLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(sldrSeccionA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addComponent(lblFalanges)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(sldFalangeDigDer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sldFalangeDigIzq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(231, Short.MAX_VALUE))
         );
 
-        sldrSeccionA.getAccessibleContext().setAccessibleName("Sección A");
+        sldFalangeDigIzq.getAccessibleContext().setAccessibleName("Falange Dig Izq");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,9 +159,9 @@ public class Vista extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addComponent(PanelCanvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addComponent(PanelControles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(PanelControles, javax.swing.GroupLayout.DEFAULT_SIZE, 226, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,9 +181,15 @@ public class Vista extends javax.swing.JFrame {
         return lienzo;
     }
 
-    public JSlider getSldrSeccionA() {
-        return sldrSeccionA;
+    public JSlider getSldrFalangeDigIzq() {
+        return sldFalangeDigIzq;
     }
+
+    public JSlider getSldFalangeDigDer() {
+        return sldFalangeDigDer;
+    }
+    
+    
     
     
     
@@ -154,7 +197,9 @@ public class Vista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelCanvas;
     private javax.swing.JPanel PanelControles;
+    private javax.swing.JLabel lblFalanges;
     private java.awt.Canvas lienzo;
-    private javax.swing.JSlider sldrSeccionA;
+    private javax.swing.JSlider sldFalangeDigDer;
+    private javax.swing.JSlider sldFalangeDigIzq;
     // End of variables declaration//GEN-END:variables
 }
