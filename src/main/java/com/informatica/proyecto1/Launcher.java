@@ -1,6 +1,8 @@
 package com.informatica.proyecto1;
 
 import com.informatica.proyecto1.presentacion.Modelo;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *

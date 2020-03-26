@@ -19,7 +19,6 @@ public class FalangeDigital {
     
     //CONSTRUCTOR
     public FalangeDigital(int xi, int yi, int xf, int yf) {
-        
         this.huesofalangeDigital = new Linea(xi, yi, xf, yf);
     }
     
@@ -27,6 +26,10 @@ public class FalangeDigital {
     //METODOS
     public void girar(int alphaGrados){
         huesofalangeDigital.girarLinea(alphaGrados);
+    }
+    
+    public void cambiarCoordBase(int xn, int yn){
+        huesofalangeDigital.cambiarCoordenadasBase(xn, yn);
     }
     
     public void dibujar(Graphics lapiz){

@@ -37,10 +37,25 @@ public class Controlador implements ChangeListener{
         }
         else if(e.getSource().equals(ventana.getSldFalangeDigDer())){
             System.out.println("Falange dig der");
-            //Mover la falange dig izq
+            //Mover la falange dig der
             modelo.girarFalDigDer();
             
         }
+        else if(e.getSource().equals(ventana.getSldFalangeProxIzq())){
+            System.out.println("Falange prox izq");
+            //Mover la falange prox izq
+            modelo.girarFalProxIzq();
+            
+        }
+        else if(e.getSource().equals(ventana.getSldFalangeProxDer())){
+            System.out.println("Falange prox der");
+            //Mover la falange prox der
+            modelo.girarFalProxDer();
+            
+        }
+        
+        
+        
     }
     
 }

@@ -7,7 +7,7 @@ package com.informatica.proyecto1.utils;
 
 /**
  *
- * @author DELL
+ * @author Vamaya
  */
 public final class Constantes {
     

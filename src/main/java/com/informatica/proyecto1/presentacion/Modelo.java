@@ -11,8 +11,6 @@ import com.informatica.proyecto1.logica.Brazo;
 import com.informatica.proyecto1.utils.Constantes;
 import java.awt.Canvas;
 import java.awt.Graphics;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 /**
@@ -24,13 +22,12 @@ public class Modelo implements Runnable {
     //VARIABLES
     private Vista ventanaApp;
     private Brazo brazo;
-    private boolean activo;
-    private Thread hiloDibujo;
+    Boolean inicio = true;
     
     //CONSTRUCTOR
     public Modelo() {
-        activo = true;
-        hiloDibujo = new Thread(this);
+        ventanaApp = new Vista(this);
+        brazo = new Brazo();
     }
 
     
@@ -58,9 +55,8 @@ public class Modelo implements Runnable {
      */
     public void iniciar() {
         getVentanaApp().setSize(Constantes.ANCHO_MAXIMO_FRAME, Constantes.ALTO_MAXIMO_FRAME);
-        getVentanaApp().setVisible(true);
-        hiloDibujo.start();
-        
+        getVentanaApp().setVisible(true); 
+        run();
     }
 
     
@@ -80,6 +76,23 @@ public class Modelo implements Runnable {
         run();
     }
     
+    
+    
+    public void girarFalProxIzq(){
+        int alphaGrados = getVentanaApp().getSldFalangeProxIzq().getValue();
+        System.out.println("Grados: " + alphaGrados);
+        getBrazo().girarFalProxIzq(alphaGrados);
+        run();
+    }
+    
+    
+    public void girarFalProxDer(){
+        int alphaGrados = getVentanaApp().getSldFalangeProxDer().getValue();
+        System.out.println("Grados: " + alphaGrados);
+        getBrazo().girarFalProxDer(alphaGrados);
+        run();
+    }
+    
     private void dibujar(){
         getVentanaApp().getLienzo().getGraphics().clearRect(0, 0, Constantes.ANCHO_MAXIMO_CANVAS, Constantes.ALTO_MAXIMO_CANVAS);
         System.out.println("Diujando...");
@@ -91,6 +104,14 @@ public class Modelo implements Runnable {
     
     @Override
     public void run() {
+        if(inicio){
+            try{
+                Thread.sleep(1000);
+            }catch(InterruptedException e){
+                System.out.println("Error");
+            }
+            inicio = false;
+        }
         dibujar();
     }
     

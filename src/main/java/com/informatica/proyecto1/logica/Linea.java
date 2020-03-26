@@ -5,8 +5,10 @@
  */
 package com.informatica.proyecto1.logica;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 
 
 /**
@@ -91,6 +93,10 @@ public class Linea {
         //Se calcula el nuevo valor de las coordenadas en el extremo
         x0 = x0 - deltaBaseX;
         y0 = y0 - deltaBaseY;
+        
+        //Se cambia el valor de la base del extremo para hacer claculos
+        xb = xb - deltaBaseX;
+        yb = yb - deltaBaseY;
     }
     
     //GETTERS
@@ -113,8 +119,10 @@ public class Linea {
     
     
     public void draw(Graphics lapiz){
-        lapiz.setColor(Color.red);
-        lapiz.drawLine(x0, y0, xf, yf);
+        Graphics2D lapiz2D = (Graphics2D) lapiz;
+        lapiz2D.setStroke(new BasicStroke(5));//Se aumenta anco de la liena
+        lapiz2D.setColor(Color.BLACK);
+        lapiz2D.drawLine(x0, y0, xf, yf);
     }
     
 }
