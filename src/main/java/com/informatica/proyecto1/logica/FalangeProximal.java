@@ -18,8 +18,8 @@ public class FalangeProximal {
     private FalangeDigital falangeDitial;
     
     //CONSTRUCTOR
-    public FalangeProximal(int xi, int yi, int xf, int yf, FalangeDigital falangeDitial) {
-        this.huesofalangeProximal = new Linea(xi, yi, xf, yf);
+    public FalangeProximal(int xi, int yi, int xf, int yf, int wl, FalangeDigital falangeDitial) {
+        this.huesofalangeProximal = new Linea(xi, yi, xf, yf, wl);
         this.falangeDitial = falangeDitial;
     }
     

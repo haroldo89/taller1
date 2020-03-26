@@ -33,21 +33,21 @@ public class Brazo {
         int xiFalDig = Constantes.ANCHO_MAXIMO_CANVAS/2;
         int yiFalDig = 0;
         
-        int wFalDig = Constantes.ANCHO_MAXIMO_CANVAS/10;
+        int wFalDig = 5;
         int hFalDig = Constantes.ALTO_MAXIMO_CANVAS/10;
         
-        falangeDigitalIzquierda = new FalangeDigital(xiFalDig, yiFalDig, xiFalDig, yiFalDig + hFalDig);
-        falangeDigitalDerecha = new FalangeDigital(xiFalDig, yiFalDig, xiFalDig, yiFalDig + hFalDig);
+        falangeDigitalIzquierda = new FalangeDigital(xiFalDig, yiFalDig, xiFalDig, yiFalDig + hFalDig, wFalDig);
+        falangeDigitalDerecha = new FalangeDigital(xiFalDig, yiFalDig, xiFalDig, yiFalDig + hFalDig, wFalDig);
     
         //Se inicializan los valores de la falange proximal
         int xiFalProx = xiFalDig;
         int yiFalProx = yiFalDig + hFalDig;
         
-        int wFalProx = Constantes.ANCHO_MAXIMO_CANVAS/10;
+        int wFalProx = 5;
         int hFalProx = Constantes.ALTO_MAXIMO_CANVAS/10;
         
-        falangeProximalIzquierda = new FalangeProximal(xiFalProx, yiFalProx, xiFalProx, yiFalProx + hFalProx, falangeDigitalIzquierda);
-        falangeProximalDerecha = new FalangeProximal(xiFalProx, yiFalProx, xiFalProx, yiFalProx + hFalProx, falangeDigitalDerecha);
+        falangeProximalIzquierda = new FalangeProximal(xiFalProx, yiFalProx, xiFalProx, yiFalProx + hFalProx, wFalProx, falangeDigitalIzquierda);
+        falangeProximalDerecha = new FalangeProximal(xiFalProx, yiFalProx, xiFalProx, yiFalProx + hFalProx, wFalProx, falangeDigitalDerecha);
         
         
         
@@ -55,30 +55,30 @@ public class Brazo {
         int xiMano = xiFalProx;
         int yiMano = yiFalProx + hFalProx;
         
-        int wMano = Constantes.ANCHO_MAXIMO_CANVAS*2/10;
+        int wMano = 10;
         int hMano = Constantes.ALTO_MAXIMO_CANVAS*2/10;
         
-        mano = new Mano(xiMano, yiMano, xiMano, yiMano + hMano, falangeProximalIzquierda, falangeProximalDerecha);
+        mano = new Mano(xiMano, yiMano, xiMano, yiMano + hMano, wMano, falangeProximalIzquierda, falangeProximalDerecha);
     
         
         //Se inicializan los valores del antebrazo
         int xiAnteBrazo = xiMano;
         int yiAnteBrazo = yiMano + hMano;
         
-        int wAnteBrazo = Constantes.ANCHO_MAXIMO_CANVAS*3/10;
+        int wAnteBrazo = 10;
         int hAnteBrazo = Constantes.ALTO_MAXIMO_CANVAS*3/10;
         
-        anteBrazo = new AnteBrazo(xiAnteBrazo, yiAnteBrazo, xiAnteBrazo, yiAnteBrazo + hAnteBrazo, mano);
+        anteBrazo = new AnteBrazo(xiAnteBrazo, yiAnteBrazo, xiAnteBrazo, yiAnteBrazo + hAnteBrazo, wAnteBrazo, mano);
         
         
         //Se inicializan los valores del brazo
         int xiBrazo = xiAnteBrazo;
         int yiBrazo = yiAnteBrazo + hAnteBrazo;
         
-        int wBrazo = Constantes.ANCHO_MAXIMO_CANVAS*3/10;
+        int wBrazo = 15;
         int hBrazo = Constantes.ALTO_MAXIMO_CANVAS*3/10;
         
-        huesoBrazo = new Linea(xiBrazo, yiBrazo, xiBrazo, yiBrazo + hBrazo);
+        huesoBrazo = new Linea(xiBrazo, yiBrazo, xiBrazo, yiBrazo + hBrazo, wBrazo);
     
     }
     

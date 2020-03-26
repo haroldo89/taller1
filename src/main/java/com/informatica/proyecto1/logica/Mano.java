@@ -19,8 +19,8 @@ public class Mano {
     private FalangeProximal falangeProximalDer;
     
     //CONSTRUCTOR
-    public Mano(int xi, int yi, int xf, int yf, FalangeProximal falangeProximalIzq, FalangeProximal falangeProximalDer) {
-        this.huesoMano = new Linea(xi, yi, xf, yf);
+    public Mano(int xi, int yi, int xf, int yf, int wl, FalangeProximal falangeProximalIzq, FalangeProximal falangeProximalDer) {
+        this.huesoMano = new Linea(xi, yi, xf, yf, wl);
         this.falangeProximalIzq = falangeProximalIzq;
         this.falangeProximalDer = falangeProximalDer;
     }

@@ -18,8 +18,8 @@ public class AnteBrazo {
     private Mano mano;
     
     //CONSTRUCTOR
-    public AnteBrazo(int xi, int yi, int xf, int yf, Mano mano) {
-        this.huesoAnteBrazo = new Linea(xi, yi, xf, yf);
+    public AnteBrazo(int xi, int yi, int xf, int yf, int wl, Mano mano) {
+        this.huesoAnteBrazo = new Linea(xi, yi, xf, yf, wl);
         this.mano = mano;
     }
     

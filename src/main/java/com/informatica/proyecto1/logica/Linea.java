@@ -17,16 +17,17 @@ import java.awt.Graphics2D;
  */
 public class Linea {
     //VARIABLES
-    private int xb, yb, x0, y0, xf, yf;//Coordenadas iniciales y finales del punto
+    private int xb, yb, x0, y0, xf, yf, wl;//Coordenadas iniciales y finales del punto
 
     //CONSTRUCTOR
-    public Linea(int xb, int yb, int xf, int yf) {
+    public Linea(int xb, int yb, int xf, int yf, int wl) {
         this.xb = xb;
         this.yb = yb;
         this.x0 = xb;
         this.y0 = yb;
         this.xf = xf;
         this.yf = yf;
+        this.wl = wl;
     }
     
     //METODOS
@@ -120,7 +121,7 @@ public class Linea {
     
     public void dibujar(Graphics lapiz){
         Graphics2D lapiz2D = (Graphics2D) lapiz;
-        lapiz2D.setStroke(new BasicStroke(5));//Se aumenta anco de la liena
+        lapiz2D.setStroke(new BasicStroke(wl));//Se aumenta anco de la liena
         lapiz2D.setColor(Color.BLACK);
         lapiz2D.drawLine(x0, y0, xf, yf);
     }

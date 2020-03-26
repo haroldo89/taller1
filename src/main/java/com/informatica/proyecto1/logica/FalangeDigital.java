@@ -18,8 +18,8 @@ public class FalangeDigital {
     private Linea huesofalangeDigital;
     
     //CONSTRUCTOR
-    public FalangeDigital(int xi, int yi, int xf, int yf) {
-        this.huesofalangeDigital = new Linea(xi, yi, xf, yf);
+    public FalangeDigital(int xi, int yi, int xf, int yf, int wl) {
+        this.huesofalangeDigital = new Linea(xi, yi, xf, yf, wl);
     }
     
     
