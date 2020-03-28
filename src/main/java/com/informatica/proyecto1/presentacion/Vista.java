@@ -110,8 +110,8 @@ public class Vista extends javax.swing.JFrame {
         PanelControles.setBackground(new java.awt.Color(255, 255, 255));
         PanelControles.setPreferredSize(new java.awt.Dimension(200, 300));
 
-        sldFalangeDigIzq.setMaximum(180);
-        sldFalangeDigIzq.setMinimum(-180);
+        sldFalangeDigIzq.setMaximum(360);
+        sldFalangeDigIzq.setMinimum(-360);
         sldFalangeDigIzq.setPaintLabels(true);
         sldFalangeDigIzq.setPaintTicks(true);
         sldFalangeDigIzq.setSnapToTicks(true);
@@ -123,8 +123,8 @@ public class Vista extends javax.swing.JFrame {
         sldFalangeDigIzq.setName("Falange Dig Izq"); // NOI18N
         sldFalangeDigIzq.setPreferredSize(new java.awt.Dimension(100, 35));
 
-        sldFalangeDigDer.setMaximum(180);
-        sldFalangeDigDer.setMinimum(-180);
+        sldFalangeDigDer.setMaximum(360);
+        sldFalangeDigDer.setMinimum(-360);
         sldFalangeDigDer.setPaintLabels(true);
         sldFalangeDigDer.setPaintTicks(true);
         sldFalangeDigDer.setSnapToTicks(true);
@@ -138,8 +138,8 @@ public class Vista extends javax.swing.JFrame {
 
         lblFalangesDig.setText("Falanges Digitales:");
 
-        sldFalangeProxDer.setMaximum(180);
-        sldFalangeProxDer.setMinimum(-180);
+        sldFalangeProxDer.setMaximum(360);
+        sldFalangeProxDer.setMinimum(-360);
         sldFalangeProxDer.setPaintLabels(true);
         sldFalangeProxDer.setPaintTicks(true);
         sldFalangeProxDer.setSnapToTicks(true);
@@ -151,8 +151,8 @@ public class Vista extends javax.swing.JFrame {
         sldFalangeProxDer.setName(""); // NOI18N
         sldFalangeProxDer.setPreferredSize(new java.awt.Dimension(100, 35));
 
-        sldFalangeProxIzq.setMaximum(180);
-        sldFalangeProxIzq.setMinimum(-180);
+        sldFalangeProxIzq.setMaximum(360);
+        sldFalangeProxIzq.setMinimum(-360);
         sldFalangeProxIzq.setPaintLabels(true);
         sldFalangeProxIzq.setPaintTicks(true);
         sldFalangeProxIzq.setSnapToTicks(true);
@@ -194,8 +194,8 @@ public class Vista extends javax.swing.JFrame {
 
         lblAnteBrazo.setText("Antebrazo:");
 
-        sldBrazo.setMaximum(180);
-        sldBrazo.setMinimum(-180);
+        sldBrazo.setMaximum(90);
+        sldBrazo.setMinimum(-90);
         sldBrazo.setPaintLabels(true);
         sldBrazo.setPaintTicks(true);
         sldBrazo.setSnapToTicks(true);

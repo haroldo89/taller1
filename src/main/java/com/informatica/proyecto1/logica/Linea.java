@@ -17,17 +17,17 @@ import java.awt.Graphics2D;
  */
 public class Linea {
     //VARIABLES
-    private int xb, yb, x0, y0, xf, yf, wl;//Coordenadas iniciales y finales del punto
+    private int xFinalEstatica, yFinalEstatica, xFinalDinamica, yFinalDinamica, xInicial, yInicial, ancho;//Coordenadas iniciales y finales del punto
 
     //CONSTRUCTOR
-    public Linea(int xb, int yb, int xf, int yf, int wl) {
-        this.xb = xb;
-        this.yb = yb;
-        this.x0 = xb;
-        this.y0 = yb;
-        this.xf = xf;
-        this.yf = yf;
-        this.wl = wl;
+    public Linea(int xFinal, int yFinal, int xInicial, int yInicial, int ancho) {
+        this.xFinalEstatica = xFinal;
+        this.yFinalEstatica = yFinal;
+        this.xFinalDinamica = xFinal;
+        this.yFinalDinamica = yFinal;
+        this.xInicial = xInicial;
+        this.yInicial = yInicial;
+        this.ancho = ancho;
     }
     
     //METODOS
@@ -45,10 +45,11 @@ public class Linea {
         //Movimiento en radianes
         double alpha = Math.toRadians(alphaGrados);
         
+        //TODO Mover h al constructor (clacular una sola vez) y anhadirle "final"
         //Se calcula la altura o el radio del vector(Hipotenusa)
-        double diferenciaX = Math.abs(xf - xb);
-        double diferenciaY = Math.abs(yf - yb);
-        double h = Math.hypot(diferenciaX, diferenciaY);
+        double catetoOpuestoX = Math.abs(xInicial - xFinalEstatica);
+        double catetoAdyacenteY = Math.abs(yInicial - yFinalEstatica);
+        double h = Math.hypot(catetoOpuestoX, catetoAdyacenteY);
         
         //deltas de desplaxamiento de acuerdo al angulo
         double deltaX = h*Math.sin(alpha);
@@ -61,69 +62,69 @@ public class Linea {
         
         //Se revisa el valor de alpha y se asigna valor al corrimiento
         if( (alphaGrados>=0 && alphaGrados <=90)){
-            xm = xb + Math.abs(deltaX);
-            ym = (yb + h) - Math.abs(deltaY);
+            xm = xFinalEstatica + Math.abs(deltaX);
+            ym = (yFinalEstatica + h) - Math.abs(deltaY);
         }
         else if( (alphaGrados>90 && alphaGrados <180)){
-            xm = xb + Math.abs(deltaX);
-            ym = (yb + h) + Math.abs(deltaY);
+            xm = xFinalEstatica + Math.abs(deltaX);
+            ym = (yFinalEstatica + h) + Math.abs(deltaY);
         }
         else if( (alphaGrados>=180 && alphaGrados <=270) ){
-            xm = xb - Math.abs(deltaX);
-            ym = (yb + h) + Math.abs(deltaY);
+            xm = xFinalEstatica - Math.abs(deltaX);
+            ym = (yFinalEstatica + h) + Math.abs(deltaY);
         }
         else if( (alphaGrados>270 && alphaGrados <=360)){
-            xm = xb - Math.abs(deltaX);
-            ym = (yb + h) - Math.abs(deltaY);
+            xm = xFinalEstatica - Math.abs(deltaX);
+            ym = (yFinalEstatica + h) - Math.abs(deltaY);
         }
         
         //Se pasan los valores a las variables de la clase
-        x0=(int) xm;
-        y0=(int) ym;
+        xFinalDinamica=(int) xm;
+        yFinalDinamica=(int) ym;
     }
     
     public void cambiarCoordenadasBase(int xn, int yn){
         //Se calcula el corrimiento de coordenadas
-        int deltaBaseX = xf - xn;
-        int deltaBaseY = yf - yn;
+        int deltaBaseX = xInicial - xn;
+        int deltaBaseY = yInicial - yn;
         
         //Se asigna el nuevo valor a la base
-        xf = xn;
-        yf = yn;
+        xInicial = xn;
+        yInicial = yn;
         
         //Se calcula el nuevo valor de las coordenadas en el extremo
-        x0 = x0 - deltaBaseX;
-        y0 = y0 - deltaBaseY;
+        xFinalDinamica = xFinalDinamica - deltaBaseX;
+        yFinalDinamica = yFinalDinamica - deltaBaseY;
         
         //Se cambia el valor de la base del extremo para hacer claculos
-        xb = xb - deltaBaseX;
-        yb = yb - deltaBaseY;
+        xFinalEstatica = xFinalEstatica - deltaBaseX;
+        yFinalEstatica = yFinalEstatica - deltaBaseY;
     }
     
     //GETTERS
 
     public int getX0() {
-        return x0;
+        return xFinalDinamica;
     }
 
     public int getY0() {
-        return y0;
+        return yFinalDinamica;
     }
 
     public int getXF() {
-        return xf;
+        return xInicial;
     }
 
     public int getYF() {
-        return yf;
+        return yInicial;
     }
     
     
     public void dibujar(Graphics lapiz){
         Graphics2D lapiz2D = (Graphics2D) lapiz;
-        lapiz2D.setStroke(new BasicStroke(wl));//Se aumenta anco de la liena
+        lapiz2D.setStroke(new BasicStroke(ancho));//Se aumenta anco de la liena
         lapiz2D.setColor(Color.BLACK);
-        lapiz2D.drawLine(x0, y0, xf, yf);
+        lapiz2D.drawLine(xFinalDinamica, yFinalDinamica, xInicial, yInicial);
     }
     
 }

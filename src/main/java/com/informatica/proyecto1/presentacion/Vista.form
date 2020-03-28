@@ -178,8 +178,8 @@
       <SubComponents>
         <Component class="javax.swing.JSlider" name="sldFalangeDigIzq">
           <Properties>
-            <Property name="maximum" type="int" value="180"/>
-            <Property name="minimum" type="int" value="-180"/>
+            <Property name="maximum" type="int" value="360"/>
+            <Property name="minimum" type="int" value="-360"/>
             <Property name="paintLabels" type="boolean" value="true"/>
             <Property name="paintTicks" type="boolean" value="true"/>
             <Property name="snapToTicks" type="boolean" value="true"/>
@@ -205,8 +205,8 @@
         </Component>
         <Component class="javax.swing.JSlider" name="sldFalangeDigDer">
           <Properties>
-            <Property name="maximum" type="int" value="180"/>
-            <Property name="minimum" type="int" value="-180"/>
+            <Property name="maximum" type="int" value="360"/>
+            <Property name="minimum" type="int" value="-360"/>
             <Property name="paintLabels" type="boolean" value="true"/>
             <Property name="paintTicks" type="boolean" value="true"/>
             <Property name="snapToTicks" type="boolean" value="true"/>
@@ -234,8 +234,8 @@
         </Component>
         <Component class="javax.swing.JSlider" name="sldFalangeProxDer">
           <Properties>
-            <Property name="maximum" type="int" value="180"/>
-            <Property name="minimum" type="int" value="-180"/>
+            <Property name="maximum" type="int" value="360"/>
+            <Property name="minimum" type="int" value="-360"/>
             <Property name="paintLabels" type="boolean" value="true"/>
             <Property name="paintTicks" type="boolean" value="true"/>
             <Property name="snapToTicks" type="boolean" value="true"/>
@@ -258,8 +258,8 @@
         </Component>
         <Component class="javax.swing.JSlider" name="sldFalangeProxIzq">
           <Properties>
-            <Property name="maximum" type="int" value="180"/>
-            <Property name="minimum" type="int" value="-180"/>
+            <Property name="maximum" type="int" value="360"/>
+            <Property name="minimum" type="int" value="-360"/>
             <Property name="paintLabels" type="boolean" value="true"/>
             <Property name="paintTicks" type="boolean" value="true"/>
             <Property name="snapToTicks" type="boolean" value="true"/>
@@ -342,8 +342,8 @@
         </Component>
         <Component class="javax.swing.JSlider" name="sldBrazo">
           <Properties>
-            <Property name="maximum" type="int" value="180"/>
-            <Property name="minimum" type="int" value="-180"/>
+            <Property name="maximum" type="int" value="90"/>
+            <Property name="minimum" type="int" value="-90"/>
             <Property name="paintLabels" type="boolean" value="true"/>
             <Property name="paintTicks" type="boolean" value="true"/>
             <Property name="snapToTicks" type="boolean" value="true"/>
