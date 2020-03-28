@@ -27,15 +27,15 @@ public class AnteBrazo {
     //METODOS
     public void girar(int alphaGrados){
         huesoAnteBrazo.girarLinea(alphaGrados);
-        int xn = huesoAnteBrazo.getX0();
-        int yn= huesoAnteBrazo.getY0();
+        int xn = huesoAnteBrazo.getXFinalDinamica();
+        int yn= huesoAnteBrazo.getYFinalDinamica();
         mano.cambiarCoordBase(xn, yn);
     }
     
      public void cambiarCoordBase(int xn, int yn){
         huesoAnteBrazo.cambiarCoordenadasBase(xn, yn);
-        int xnf = huesoAnteBrazo.getX0();
-        int ynf= huesoAnteBrazo.getY0();
+        int xnf = huesoAnteBrazo.getXFinalDinamica();
+        int ynf= huesoAnteBrazo.getYFinalDinamica();
         mano.cambiarCoordBase(xnf, ynf);
     }
     

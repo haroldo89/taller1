@@ -27,15 +27,15 @@ public class FalangeProximal {
     //METODOS
     public void girar(int alphaGrados){
         huesofalangeProximal.girarLinea(alphaGrados);
-        int xn = huesofalangeProximal.getX0();
-        int yn= huesofalangeProximal.getY0();
+        int xn = huesofalangeProximal.getXFinalDinamica();
+        int yn= huesofalangeProximal.getYFinalDinamica();
         falangeDitial.cambiarCoordBase(xn, yn);
     }
     
      public void cambiarCoordBase(int xn, int yn){
         huesofalangeProximal.cambiarCoordenadasBase(xn, yn);
-        int xnf = huesofalangeProximal.getX0();
-        int ynf= huesofalangeProximal.getY0();
+        int xnf = huesofalangeProximal.getXFinalDinamica();
+        int ynf= huesofalangeProximal.getYFinalDinamica();
         falangeDitial.cambiarCoordBase(xnf, ynf);
     }
     

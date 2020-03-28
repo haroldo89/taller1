@@ -29,16 +29,16 @@ public class Mano {
     //METODOS
     public void girar(int alphaGrados){
         huesoMano.girarLinea(alphaGrados);
-        int xn = huesoMano.getX0();
-        int yn= huesoMano.getY0();
+        int xn = huesoMano.getXFinalDinamica();
+        int yn= huesoMano.getYFinalDinamica();
         falangeProximalIzq.cambiarCoordBase(xn, yn);
         falangeProximalDer.cambiarCoordBase(xn, yn);
     }
     
      public void cambiarCoordBase(int xn, int yn){
         huesoMano.cambiarCoordenadasBase(xn, yn);
-        int xnf = huesoMano.getX0();
-        int ynf= huesoMano.getY0();
+        int xnf = huesoMano.getXFinalDinamica();
+        int ynf= huesoMano.getYFinalDinamica();
         falangeProximalIzq.cambiarCoordBase(xnf, ynf);
         falangeProximalDer.cambiarCoordBase(xnf, ynf);
     }

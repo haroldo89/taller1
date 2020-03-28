@@ -1,14 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.informatica.proyecto1.logica;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import lombok.Getter;
 
 
 /**
@@ -17,8 +13,10 @@ import java.awt.Graphics2D;
  */
 public class Linea {
     //VARIABLES
-    private int xFinalDinamica, yFinalDinamica, xInicial, yInicial, ancho;//Coordenadas iniciales y finales del punto
-    private double h;
+    @Getter private int xFinalDinamica, yFinalDinamica, xInicial, yInicial;//Coordenadas iniciales y finales
+    @Getter private final int ancho;//ancho de la linea
+    @Getter private final double hipotenusa;//longitud de la linea
+    
     //CONSTRUCTOR
     public Linea(int xFinal, int yFinal, int xInicial, int yInicial, int ancho) {
         this.xFinalDinamica = xFinal;
@@ -30,7 +28,7 @@ public class Linea {
         //Se calcula la altura o el radio del vector(Hipotenusa)
         double catetoOpuestoX = Math.abs(xInicial - xFinal);
         double catetoAdyacenteY = Math.abs(yInicial - yFinal);
-        h = Math.hypot(catetoOpuestoX, catetoAdyacenteY);
+        hipotenusa = Math.hypot(catetoOpuestoX, catetoAdyacenteY);
     }
     
     //METODOS
@@ -49,8 +47,8 @@ public class Linea {
         double alpha = Math.toRadians(alphaGrados);
         
         //deltas de desplaxamiento de acuerdo al angulo
-        double deltaX = h*Math.sin(alpha);
-        double deltaY = h*Math.cos(alpha);
+        double deltaX = hipotenusa*Math.sin(alpha);
+        double deltaY = hipotenusa*Math.cos(alpha);
         
         
         //Se inicializan variables de corrimiento
@@ -80,39 +78,30 @@ public class Linea {
         yFinalDinamica=(int) ym;
     }
     
-    public void cambiarCoordenadasBase(int xn, int yn){
+    /**
+     * Metodo que permite cambiar la base de el pseudo plano de la linea
+     * (Corrimiento/traslación de toda la linea)
+     * @param xTrasladada
+     * @param yTrasladada 
+     */
+    public void cambiarCoordenadasBase(int xTrasladada, int yTrasladada){
         //Se calcula el corrimiento de coordenadas
-        int deltaBaseX = xInicial - xn;
-        int deltaBaseY = yInicial - yn;
+        int deltaTrasladoX = xInicial - xTrasladada;
+        int deltaTrasladoY = yInicial - yTrasladada;
         
         //Se asigna el nuevo valor a la base
-        xInicial = xn;
-        yInicial = yn;
+        xInicial = xTrasladada;
+        yInicial = yTrasladada;
         
         //Se calcula el nuevo valor de las coordenadas en el extremo
-        xFinalDinamica = xFinalDinamica - deltaBaseX;
-        yFinalDinamica = yFinalDinamica - deltaBaseY;
+        xFinalDinamica = xFinalDinamica - deltaTrasladoX;
+        yFinalDinamica = yFinalDinamica - deltaTrasladoY;
     }
     
-    //GETTERS
-
-    public int getX0() {
-        return xFinalDinamica;
-    }
-
-    public int getY0() {
-        return yFinalDinamica;
-    }
-
-    public int getXF() {
-        return xInicial;
-    }
-
-    public int getYF() {
-        return yInicial;
-    }
-    
-    
+    /**
+     * Función que permite graficar la linea
+     * @param lapiz 
+     */
     public void dibujar(Graphics lapiz){
         Graphics2D lapiz2D = (Graphics2D) lapiz;
         lapiz2D.setStroke(new BasicStroke(ancho));//Se aumenta anco de la liena

@@ -122,8 +122,8 @@ public class Brazo {
     
     public void girarBrazo(int alphaGrados){
         huesoBrazo.girarLinea(alphaGrados);
-        int xn = huesoBrazo.getX0();
-        int yn= huesoBrazo.getY0();
+        int xn = huesoBrazo.getXFinalDinamica();
+        int yn= huesoBrazo.getYFinalDinamica();
         anteBrazo.cambiarCoordBase(xn, yn);
     }
     
