@@ -51,7 +51,7 @@ public class BrazoCompleto {
         int wAnteBrazo = 20;
         int hAnteBrazo = Constantes.ALTO_MAXIMO_CANVAS*3/10;
         
-        anteBrazo = new AnteBrazo(xiAnteBrazo, yiAnteBrazo, xiAnteBrazo, yiAnteBrazo + hAnteBrazo, wAnteBrazo, mano);
+        anteBrazo = new AnteBrazo(mano, xiAnteBrazo, yiAnteBrazo, xiAnteBrazo, yiAnteBrazo + hAnteBrazo, wAnteBrazo);
         
         
         //Se inicializan los valores del brazo
@@ -60,7 +60,7 @@ public class BrazoCompleto {
         int wBrazo = 20;
         int hBrazo = Constantes.ALTO_MAXIMO_CANVAS*3/10;
         
-        brazo = new Brazo(xiBrazo, yiBrazo, xiBrazo, yiBrazo + hBrazo, wBrazo, anteBrazo);
+        brazo = new Brazo(anteBrazo, xiBrazo, yiBrazo, xiBrazo, yiBrazo + hBrazo, wBrazo);
         
         base= new Base(xiBrazo, yiBrazo+hBrazo, 100, wBrazo/2);
     }
