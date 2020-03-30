@@ -42,7 +42,7 @@ public class BrazoCompleto {
         int wMano = 20;
         int hMano = Constantes.ALTO_MAXIMO_CANVAS*2/10;
         
-        mano = new Mano(xiMano, yiMano, xiMano, yiMano + hMano, wMano, dedoIzq, dedoDer);
+        mano = new Mano(dedoIzq, dedoDer, xiMano, yiMano, xiMano, yiMano + hMano, wMano);
     
         
         //Se inicializan los valores del antebrazo

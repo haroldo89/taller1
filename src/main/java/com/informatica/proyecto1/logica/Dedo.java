@@ -6,10 +6,11 @@ import lombok.Getter;
  *
  * @author Vamaya
  */
+@Getter
 public class Dedo extends Hueso{
     
     //VARIABLES    
-    @Getter private final Hueso falangeDitial;
+    private final Hueso falangeDitial;
     
     //CONSTRUCTOR
     public Dedo(int xFinal1, int yFinal1, int xFinal2, int yFinal2,  int xInicial, int yInicial, int ancho){    

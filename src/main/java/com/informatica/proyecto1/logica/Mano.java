@@ -6,18 +6,17 @@ import lombok.Getter;
  *
  * @author Vamaya
  */
-public class Mano extends Hueso{
+public class Mano extends HuesoConHueso{
     
     //VARIABLES    
-    @Getter private final Dedo dedoIzq;
     @Getter private final Dedo dedoDer;
     
     //CONSTRUCTOR
-    public Mano(int xFinal, int yFinal, int xInicial, int yInicial, int ancho, Dedo dedoIzq, Dedo dedoDer) {
-        super(xFinal, yFinal, xInicial, yInicial, ancho);
-        this.dedoIzq = dedoIzq;
+
+    public Mano(Dedo dedoIzq, Dedo dedoDer, int xFinal, int yFinal, int xInicial, int yInicial, int ancho) {
+        super(dedoIzq, xFinal, yFinal, xInicial, yInicial, ancho);
         this.dedoDer = dedoDer;
-    }    
+    }
     
     //METODOS
     @Override
@@ -26,8 +25,6 @@ public class Mano extends Hueso{
         int xn = this.getXFinalDinamica();
         int yn= this.getYFinalDinamica();
         dedoDer.cambiarCoordenadasBase(xn, yn);
-        dedoIzq.cambiarCoordenadasBase(xn, yn);
-        
     }
     
     @Override
@@ -36,7 +33,6 @@ public class Mano extends Hueso{
         int xnf = this.getXFinalDinamica();
         int ynf= this.getYFinalDinamica();
         dedoDer.cambiarCoordenadasBase(xnf, ynf);
-        dedoIzq.cambiarCoordenadasBase(xnf, ynf);
     }
 
 }
