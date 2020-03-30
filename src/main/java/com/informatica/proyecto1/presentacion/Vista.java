@@ -93,16 +93,16 @@ public class Vista extends javax.swing.JFrame {
         PanelCanvasLayout.setHorizontalGroup(
             PanelCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelCanvasLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(lienzo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addComponent(lienzo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         PanelCanvasLayout.setVerticalGroup(
             PanelCanvasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(PanelCanvasLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(lienzo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelCanvasLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lienzo, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
         );
 
         lienzo.getAccessibleContext().setAccessibleName("");
@@ -110,8 +110,11 @@ public class Vista extends javax.swing.JFrame {
         PanelControles.setBackground(new java.awt.Color(255, 255, 255));
         PanelControles.setPreferredSize(new java.awt.Dimension(200, 300));
 
+        sldFalangeDigIzq.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        sldFalangeDigIzq.setMajorTickSpacing(180);
         sldFalangeDigIzq.setMaximum(360);
         sldFalangeDigIzq.setMinimum(-360);
+        sldFalangeDigIzq.setMinorTickSpacing(1);
         sldFalangeDigIzq.setPaintLabels(true);
         sldFalangeDigIzq.setPaintTicks(true);
         sldFalangeDigIzq.setSnapToTicks(true);
@@ -123,8 +126,11 @@ public class Vista extends javax.swing.JFrame {
         sldFalangeDigIzq.setName("Falange Dig Izq"); // NOI18N
         sldFalangeDigIzq.setPreferredSize(new java.awt.Dimension(100, 35));
 
+        sldFalangeDigDer.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        sldFalangeDigDer.setMajorTickSpacing(180);
         sldFalangeDigDer.setMaximum(360);
         sldFalangeDigDer.setMinimum(-360);
+        sldFalangeDigDer.setMinorTickSpacing(1);
         sldFalangeDigDer.setPaintLabels(true);
         sldFalangeDigDer.setPaintTicks(true);
         sldFalangeDigDer.setSnapToTicks(true);
@@ -138,8 +144,11 @@ public class Vista extends javax.swing.JFrame {
 
         lblFalangesDig.setText("Falanges Digitales:");
 
+        sldFalangeProxDer.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        sldFalangeProxDer.setMajorTickSpacing(180);
         sldFalangeProxDer.setMaximum(360);
         sldFalangeProxDer.setMinimum(-360);
+        sldFalangeProxDer.setMinorTickSpacing(1);
         sldFalangeProxDer.setPaintLabels(true);
         sldFalangeProxDer.setPaintTicks(true);
         sldFalangeProxDer.setSnapToTicks(true);
@@ -151,8 +160,11 @@ public class Vista extends javax.swing.JFrame {
         sldFalangeProxDer.setName(""); // NOI18N
         sldFalangeProxDer.setPreferredSize(new java.awt.Dimension(100, 35));
 
+        sldFalangeProxIzq.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        sldFalangeProxIzq.setMajorTickSpacing(180);
         sldFalangeProxIzq.setMaximum(360);
         sldFalangeProxIzq.setMinimum(-360);
+        sldFalangeProxIzq.setMinorTickSpacing(1);
         sldFalangeProxIzq.setPaintLabels(true);
         sldFalangeProxIzq.setPaintTicks(true);
         sldFalangeProxIzq.setSnapToTicks(true);
@@ -166,8 +178,11 @@ public class Vista extends javax.swing.JFrame {
 
         lblFalangesProx.setText("Falanges Proximales:");
 
+        sldMano.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        sldMano.setMajorTickSpacing(45);
         sldMano.setMaximum(180);
         sldMano.setMinimum(-180);
+        sldMano.setMinorTickSpacing(1);
         sldMano.setPaintLabels(true);
         sldMano.setPaintTicks(true);
         sldMano.setSnapToTicks(true);
@@ -180,8 +195,11 @@ public class Vista extends javax.swing.JFrame {
 
         lblMano.setText("Mano:");
 
+        sldAnteBrazo.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        sldAnteBrazo.setMajorTickSpacing(45);
         sldAnteBrazo.setMaximum(180);
         sldAnteBrazo.setMinimum(-180);
+        sldAnteBrazo.setMinorTickSpacing(1);
         sldAnteBrazo.setPaintLabels(true);
         sldAnteBrazo.setPaintTicks(true);
         sldAnteBrazo.setSnapToTicks(true);
@@ -194,8 +212,11 @@ public class Vista extends javax.swing.JFrame {
 
         lblAnteBrazo.setText("Antebrazo:");
 
+        sldBrazo.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        sldBrazo.setMajorTickSpacing(45);
         sldBrazo.setMaximum(90);
         sldBrazo.setMinimum(-90);
+        sldBrazo.setMinorTickSpacing(1);
         sldBrazo.setPaintLabels(true);
         sldBrazo.setPaintTicks(true);
         sldBrazo.setSnapToTicks(true);
@@ -215,26 +236,25 @@ public class Vista extends javax.swing.JFrame {
             .addGroup(PanelControlesLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(sldBrazo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sldMano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(sldAnteBrazo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sldBrazo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(PanelControlesLayout.createSequentialGroup()
-                            .addComponent(sldFalangeProxIzq, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(sldFalangeProxDer, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(PanelControlesLayout.createSequentialGroup()
-                            .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(lblFalangesDig)
-                                .addGroup(PanelControlesLayout.createSequentialGroup()
-                                    .addComponent(sldFalangeDigIzq, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(sldFalangeDigDer, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(lblFalangesProx)
-                                .addComponent(lblMano)
-                                .addComponent(lblAnteBrazo)
-                                .addComponent(lblBrazo))
-                            .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(PanelControlesLayout.createSequentialGroup()
+                        .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblFalangesDig)
+                            .addComponent(lblBrazo)
+                            .addComponent(lblFalangesProx)
+                            .addComponent(lblMano)
+                            .addComponent(lblAnteBrazo))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(PanelControlesLayout.createSequentialGroup()
+                        .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(sldFalangeDigIzq, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
+                            .addComponent(sldFalangeProxIzq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(sldFalangeProxDer, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
+                            .addComponent(sldFalangeDigDer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         PanelControlesLayout.setVerticalGroup(
@@ -243,28 +263,28 @@ public class Vista extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addComponent(lblFalangesDig)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(sldFalangeDigDer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sldFalangeDigIzq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(sldFalangeDigIzq, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sldFalangeDigDer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblFalangesProx)
-                .addGap(4, 4, 4)
+                .addGap(8, 8, 8)
                 .addGroup(PanelControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(sldFalangeProxDer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(sldFalangeProxIzq, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(sldFalangeProxDer, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sldFalangeProxIzq, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblMano)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sldMano, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addComponent(sldMano, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblAnteBrazo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sldAnteBrazo, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addComponent(sldAnteBrazo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblBrazo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sldBrazo, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                .addGap(6, 6, 6))
+                .addComponent(sldBrazo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         sldFalangeDigIzq.getAccessibleContext().setAccessibleName("Falange Dig Izq");
@@ -278,17 +298,17 @@ public class Vista extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(PanelCanvas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(PanelControles, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(PanelControles, javax.swing.GroupLayout.PREFERRED_SIZE, 590, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PanelControles, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PanelCanvas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PanelControles, javax.swing.GroupLayout.PREFERRED_SIZE, 392, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(PanelCanvas, javax.swing.GroupLayout.DEFAULT_SIZE, 392, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

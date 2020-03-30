@@ -11,19 +11,23 @@ import lombok.Getter;
  *
  * @author Vamaya
  */
-public class Linea {
+public class Hueso {
     //VARIABLES
     @Getter private int xFinalDinamica, yFinalDinamica, xInicial, yInicial;//Coordenadas iniciales y finales
     @Getter private final int ancho;//ancho de la linea
     @Getter private final double hipotenusa;//longitud de la linea
+    @Getter private Articulacion articulacion;
     
     //CONSTRUCTOR
-    public Linea(int xFinal, int yFinal, int xInicial, int yInicial, int ancho) {
+    public Hueso(int xFinal, int yFinal, int xInicial, int yInicial, int ancho) {
         this.xFinalDinamica = xFinal;
         this.yFinalDinamica = yFinal;
         this.xInicial = xInicial;
         this.yInicial = yInicial;
         this.ancho = ancho;
+        
+        //Se inicia la articulación base del hueso
+        this.articulacion = new Articulacion(xInicial, yInicial, ancho);
         
         //Se calcula la altura o el radio del vector(Hipotenusa)
         double catetoOpuestoX = Math.abs(xInicial - xFinal);
@@ -37,7 +41,7 @@ public class Linea {
      * Metodo que permite girar n grados el extremo de la linea, respecto a una base fija
      * @param alphaGrados 
      */
-    public void girarLinea(int alphaGrados){
+    public void girarHueso(int alphaGrados){
         
         //Se revisa si alphaGrados es negativo
         if(alphaGrados<0){
@@ -96,6 +100,9 @@ public class Linea {
         //Se calcula el nuevo valor de las coordenadas en el extremo
         xFinalDinamica = xFinalDinamica - deltaTrasladoX;
         yFinalDinamica = yFinalDinamica - deltaTrasladoY;
+        
+        //Se traslada la articulación
+        articulacion.cambiarCoordenadasBase(xTrasladada, yTrasladada);
     }
     
     /**
@@ -104,8 +111,8 @@ public class Linea {
      */
     public void dibujar(Graphics lapiz){
         Graphics2D lapiz2D = (Graphics2D) lapiz;
+        lapiz.setColor(new Color(102, 255, 255));
         lapiz2D.setStroke(new BasicStroke(ancho));//Se aumenta anco de la liena
-        lapiz2D.setColor(Color.BLACK);
         lapiz2D.drawLine(xFinalDinamica, yFinalDinamica, xInicial, yInicial);
     }
     

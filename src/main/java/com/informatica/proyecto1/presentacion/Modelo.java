@@ -8,6 +8,7 @@ package com.informatica.proyecto1.presentacion;
 // import logica;
 
 import com.informatica.proyecto1.logica.Brazo;
+import com.informatica.proyecto1.logica.BrazoCompleto;
 import com.informatica.proyecto1.utils.Constantes;
 import java.awt.Canvas;
 import java.awt.Graphics;
@@ -21,13 +22,13 @@ public class Modelo implements Runnable {
     
     //VARIABLES
     private Vista ventanaApp;
-    private Brazo brazo;
+    private BrazoCompleto brazoCompleto;
     Boolean inicio = true;
     
     //CONSTRUCTOR
     public Modelo() {
         ventanaApp = new Vista(this);
-        brazo = new Brazo();
+        brazoCompleto = new BrazoCompleto();
     }
 
     
@@ -39,11 +40,11 @@ public class Modelo implements Runnable {
         return ventanaApp;
     }
 
-    public Brazo getBrazo() {
-        if(brazo == null){
-            brazo = new Brazo();
+    public BrazoCompleto getBrazoCompleto() {
+        if(brazoCompleto == null){
+            brazoCompleto = new BrazoCompleto();
         }
-        return brazo;
+        return brazoCompleto;
     }
     
     
@@ -64,7 +65,9 @@ public class Modelo implements Runnable {
     public void girarFalDigIzq(){
         int alphaGrados = getVentanaApp().getSldrFalangeDigIzq().getValue();
         System.out.println("Grados: " + alphaGrados);
-        getBrazo().girarFalDidIzq(alphaGrados);
+        //getBrazo().girarFalDidIzq(alphaGrados);
+        getBrazoCompleto().getDedoIzq().getFalangeDitial().girarHueso(alphaGrados);
+                //.getFalangeDigitalIzquierda().girarHueso(alphaGrados);
         run();
     }
     
@@ -72,7 +75,9 @@ public class Modelo implements Runnable {
     public void girarFalDigDer(){
         int alphaGrados = getVentanaApp().getSldFalangeDigDer().getValue();
         System.out.println("Grados: " + alphaGrados);
-        getBrazo().girarFalDidDer(alphaGrados);
+        getBrazoCompleto().getDedoDer().getFalangeDitial().girarHueso(alphaGrados);
+                //.getFalangeDigitalDerecha().girarHueso(alphaGrados);
+                //girarFalDidDer(alphaGrados);
         run();
     }
     
@@ -81,7 +86,8 @@ public class Modelo implements Runnable {
     public void girarFalProxIzq(){
         int alphaGrados = getVentanaApp().getSldFalangeProxIzq().getValue();
         System.out.println("Grados: " + alphaGrados);
-        getBrazo().girarFalProxIzq(alphaGrados);
+        getBrazoCompleto().getDedoIzq().girarHueso(alphaGrados);
+                //girarFalProxIzq(alphaGrados);
         run();
     }
     
@@ -89,7 +95,8 @@ public class Modelo implements Runnable {
     public void girarFalProxDer(){
         int alphaGrados = getVentanaApp().getSldFalangeProxDer().getValue();
         System.out.println("Grados: " + alphaGrados);
-        getBrazo().girarFalProxDer(alphaGrados);
+        getBrazoCompleto().getDedoDer().girarHueso(alphaGrados);
+                //girarFalProxDer(alphaGrados);
         run();
     }
     
@@ -97,7 +104,8 @@ public class Modelo implements Runnable {
     public void girarMano(){
         int alphaGrados = getVentanaApp().getSldMano().getValue();
         System.out.println("Grados: " + alphaGrados);
-        getBrazo().girarMano(alphaGrados);
+        getBrazoCompleto().getMano().girarHueso(alphaGrados);
+                //girarMano(alphaGrados);
         run();
     }
     
@@ -105,7 +113,8 @@ public class Modelo implements Runnable {
     public void girarAnteBrazo(){
         int alphaGrados = getVentanaApp().getSldAnteBrazo().getValue();
         System.out.println("Grados: " + alphaGrados);
-        getBrazo().girarAnteBrazo(alphaGrados);
+        getBrazoCompleto().getAnteBrazo().girarHueso(alphaGrados);
+                //girarAnteBrazo(alphaGrados);
         run();
     }
     
@@ -113,7 +122,8 @@ public class Modelo implements Runnable {
     public void girarBrazo(){
         int alphaGrados = getVentanaApp().getSldBrazo().getValue();
         System.out.println("Grados: " + alphaGrados);
-        getBrazo().girarBrazo(alphaGrados);
+        getBrazoCompleto().getBrazo().girarHueso(alphaGrados);
+                //girarBrazo(alphaGrados);
         run();
     }
     
@@ -124,7 +134,7 @@ public class Modelo implements Runnable {
         System.out.println("Diujando...");
         Canvas lienzo = getVentanaApp().getLienzo();
         Graphics lapiz = lienzo.getGraphics();
-        getBrazo().dibujarBrazo(lapiz);
+        getBrazoCompleto().dibujarBrazo(lapiz);
     }
     
     

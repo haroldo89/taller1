@@ -1,78 +1,42 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.informatica.proyecto1.logica;
 
-import java.awt.Graphics;
+import lombok.Getter;
 
 /**
  *
- * @author DELL
+ * @author Vamaya
  */
-public class Mano {
+public class Mano extends Hueso{
     
     //VARIABLES    
-    private Linea huesoMano;
-    private FalangeProximal falangeProximalIzq;
-    private FalangeProximal falangeProximalDer;
+    @Getter private final Dedo dedoIzq;
+    @Getter private final Dedo dedoDer;
     
     //CONSTRUCTOR
-    public Mano(int xi, int yi, int xf, int yf, int wl, FalangeProximal falangeProximalIzq, FalangeProximal falangeProximalDer) {
-        this.huesoMano = new Linea(xi, yi, xf, yf, wl);
-        this.falangeProximalIzq = falangeProximalIzq;
-        this.falangeProximalDer = falangeProximalDer;
-    }
-    
+    public Mano(int xFinal, int yFinal, int xInicial, int yInicial, int ancho, Dedo dedoIzq, Dedo dedoDer) {
+        super(xFinal, yFinal, xInicial, yInicial, ancho);
+        this.dedoIzq = dedoIzq;
+        this.dedoDer = dedoDer;
+    }    
     
     //METODOS
-    public void girar(int alphaGrados){
-        huesoMano.girarLinea(alphaGrados);
-        int xn = huesoMano.getXFinalDinamica();
-        int yn= huesoMano.getYFinalDinamica();
-        falangeProximalIzq.cambiarCoordBase(xn, yn);
-        falangeProximalDer.cambiarCoordBase(xn, yn);
+    @Override
+    public void girarHueso(int alphaGrados){
+        super.girarHueso(alphaGrados);
+        int xn = this.getXFinalDinamica();
+        int yn= this.getYFinalDinamica();
+        dedoDer.cambiarCoordenadasBase(xn, yn);
+        dedoIzq.cambiarCoordenadasBase(xn, yn);
+        
     }
     
-     public void cambiarCoordBase(int xn, int yn){
-        huesoMano.cambiarCoordenadasBase(xn, yn);
-        int xnf = huesoMano.getXFinalDinamica();
-        int ynf= huesoMano.getYFinalDinamica();
-        falangeProximalIzq.cambiarCoordBase(xnf, ynf);
-        falangeProximalDer.cambiarCoordBase(xnf, ynf);
-    }
-    
-    public void dibujar(Graphics lapiz){
-        huesoMano.dibujar(lapiz);
-    }
-    
-    
-    //GETTERS
-    public Linea getHuesoMano() {
-        return huesoMano;
+    @Override
+    public void cambiarCoordenadasBase(int xTrasladada, int yTrasladada){
+        super.cambiarCoordenadasBase(xTrasladada, yTrasladada);
+        int xnf = this.getXFinalDinamica();
+        int ynf= this.getYFinalDinamica();
+        dedoDer.cambiarCoordenadasBase(xnf, ynf);
+        dedoIzq.cambiarCoordenadasBase(xnf, ynf);
     }
 
-    public FalangeProximal getFalangeProximalIzq() {
-        return falangeProximalIzq;
-    }
-
-    public FalangeProximal getFalangeProximalDer() {
-        return falangeProximalDer;
-    }
-    
-    
-    //SETTERS
-    public void setHuesoMano(Linea huesoMano) {
-        this.huesoMano = huesoMano;
-    }
-
-    public void setFalangeProximalIzq(FalangeProximal falangeProximalIzq) {
-        this.falangeProximalIzq = falangeProximalIzq;
-    }
-
-    public void setFalangeProximalDer(FalangeProximal falangeProximalDer) {
-        this.falangeProximalDer = falangeProximalDer;
-    }
-    
 }
