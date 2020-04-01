@@ -8,18 +8,19 @@ import lombok.Getter;
  *
  * @author Vamaya
  */
-public class BrazoCompleto {
+@Getter
+public class BrazoRobot {
     
     //VARIABLES    
-    @Getter private final Dedo dedoIzq;
-    @Getter private final Dedo dedoDer;
-    @Getter private final Mano mano;    
-    @Getter private final AnteBrazo anteBrazo;    
-    @Getter private final Brazo brazo; 
-    private Base base;
+    private final Dedo dedoIzq;
+    private final Dedo dedoDer;
+    private final Mano mano;    
+    private final AnteBrazo anteBrazo;    
+    private final Brazo brazo; 
+    private final Base base;
     
     //CONSTRUCTOR
-    public BrazoCompleto() {
+    public BrazoRobot() {
         //Se inicializan los valores de la falange digital
         int xiFalDig = Constantes.ANCHO_MAXIMO_CANVAS/2;
         int yiFalDig = 0;

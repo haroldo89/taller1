@@ -1,17 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.informatica.proyecto1.presentacion;
 
 // import logica;
-
-import com.informatica.proyecto1.logica.Brazo;
-import com.informatica.proyecto1.logica.BrazoCompleto;
+import com.informatica.proyecto1.logica.BrazoRobot;
 import com.informatica.proyecto1.utils.Constantes;
 import java.awt.Canvas;
 import java.awt.Graphics;
+import java.awt.image.BufferedImage;
 
 
 /**
@@ -22,13 +16,13 @@ public class Modelo implements Runnable {
     
     //VARIABLES
     private Vista ventanaApp;
-    private BrazoCompleto brazoCompleto;
+    private BrazoRobot brazoCompleto;
     Boolean inicio = true;
     
     //CONSTRUCTOR
     public Modelo() {
         ventanaApp = new Vista(this);
-        brazoCompleto = new BrazoCompleto();
+        brazoCompleto = new BrazoRobot();
     }
 
     
@@ -40,9 +34,9 @@ public class Modelo implements Runnable {
         return ventanaApp;
     }
 
-    public BrazoCompleto getBrazoCompleto() {
+    public BrazoRobot getBrazoCompleto() {
         if(brazoCompleto == null){
-            brazoCompleto = new BrazoCompleto();
+            brazoCompleto = new BrazoRobot();
         }
         return brazoCompleto;
     }
@@ -68,7 +62,7 @@ public class Modelo implements Runnable {
         //getBrazo().girarFalDidIzq(alphaGrados);
         getBrazoCompleto().getDedoIzq().getFalangeDitial().girarHueso(alphaGrados);
                 //.getFalangeDigitalIzquierda().girarHueso(alphaGrados);
-        run();
+        dibujar();
     }
     
     
@@ -78,7 +72,7 @@ public class Modelo implements Runnable {
         getBrazoCompleto().getDedoDer().getFalangeDitial().girarHueso(alphaGrados);
                 //.getFalangeDigitalDerecha().girarHueso(alphaGrados);
                 //girarFalDidDer(alphaGrados);
-        run();
+        dibujar();
     }
     
     
@@ -88,7 +82,7 @@ public class Modelo implements Runnable {
         System.out.println("Grados: " + alphaGrados);
         getBrazoCompleto().getDedoIzq().girarHueso(alphaGrados);
                 //girarFalProxIzq(alphaGrados);
-        run();
+        dibujar();
     }
     
     
@@ -97,7 +91,7 @@ public class Modelo implements Runnable {
         System.out.println("Grados: " + alphaGrados);
         getBrazoCompleto().getDedoDer().girarHueso(alphaGrados);
                 //girarFalProxDer(alphaGrados);
-        run();
+        dibujar();
     }
     
     
@@ -106,7 +100,7 @@ public class Modelo implements Runnable {
         System.out.println("Grados: " + alphaGrados);
         getBrazoCompleto().getMano().girarHueso(alphaGrados);
                 //girarMano(alphaGrados);
-        run();
+        dibujar();
     }
     
     
@@ -115,7 +109,7 @@ public class Modelo implements Runnable {
         System.out.println("Grados: " + alphaGrados);
         getBrazoCompleto().getAnteBrazo().girarHueso(alphaGrados);
                 //girarAnteBrazo(alphaGrados);
-        run();
+        dibujar();
     }
     
     
@@ -124,17 +118,29 @@ public class Modelo implements Runnable {
         System.out.println("Grados: " + alphaGrados);
         getBrazoCompleto().getBrazo().girarHueso(alphaGrados);
                 //girarBrazo(alphaGrados);
-        run();
+        dibujar();
     }
     
     
     
     private void dibujar(){
-        getVentanaApp().getLienzo().getGraphics().clearRect(0, 0, Constantes.ANCHO_MAXIMO_CANVAS, Constantes.ALTO_MAXIMO_CANVAS);
+        
+        
         System.out.println("Diujando...");
         Canvas lienzo = getVentanaApp().getLienzo();
-        Graphics lapiz = lienzo.getGraphics();
+        
+        BufferedImage dobleBuffer = new BufferedImage(lienzo.getWidth(), lienzo.getHeight(), BufferedImage.TYPE_INT_ARGB);
+                
+        Graphics lapiz = dobleBuffer.getGraphics();
+        
+        lapiz.clearRect(0, 0, Constantes.ANCHO_MAXIMO_CANVAS, Constantes.ALTO_MAXIMO_CANVAS);
+        
         getBrazoCompleto().dibujarBrazo(lapiz);
+        
+        Graphics pincel = lienzo.getGraphics();
+        
+        pincel.drawImage(dobleBuffer, 0, 0, lienzo);
+                
     }
     
     
