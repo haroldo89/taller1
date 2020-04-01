@@ -24,6 +24,7 @@ public class BrazoRobot {
         //Se inicializan los valores de la falange digital
         int xiFalDig = Constantes.ANCHO_MAXIMO_CANVAS/2;
         int yiFalDig = 0;
+        int wFalDig = 10;
         int hFalDig = Constantes.ALTO_MAXIMO_CANVAS/10;
 
         //Se inicializan los valores de la falange proximal
@@ -32,8 +33,10 @@ public class BrazoRobot {
         int wFalProx = 10;
         int hFalProx = Constantes.ALTO_MAXIMO_CANVAS/10;
         
-        dedoIzq = new Dedo(xiFalDig, yiFalDig, xiFalProx, yiFalProx, xiFalProx, yiFalProx + hFalProx, wFalProx);
-        dedoDer = new Dedo(xiFalDig, yiFalDig, xiFalProx, yiFalProx, xiFalProx, yiFalProx + hFalProx, wFalProx);
+        dedoIzq = new Dedo(new Hueso(xiFalDig, yiFalDig, xiFalDig, yiFalDig+hFalDig, wFalDig), xiFalProx, yiFalProx, xiFalProx, yiFalProx+hFalProx, wFalProx);
+        dedoDer = new Dedo(new Hueso(xiFalDig, yiFalDig, xiFalDig, yiFalDig+hFalDig, wFalDig), xiFalProx, yiFalProx, xiFalProx, yiFalProx+hFalProx, wFalProx);
+        //dedoIzq = new Dedo(xiFalDig, yiFalDig, xiFalProx, yiFalProx, xiFalProx, yiFalProx + hFalProx, wFalProx);
+        //dedoDer = new Dedo(xiFalDig, yiFalDig, xiFalProx, yiFalProx, xiFalProx, yiFalProx + hFalProx, wFalProx);
         
         
         
@@ -70,8 +73,8 @@ public class BrazoRobot {
     
     public void dibujarBrazo(Graphics lapiz){       
         
-        dedoIzq.getFalangeDitial().dibujar(lapiz);
-        dedoDer.getFalangeDitial().dibujar(lapiz);
+        dedoIzq.getHuesoUnido().dibujar(lapiz);
+        dedoDer.getHuesoUnido().dibujar(lapiz);
         
         dedoIzq.dibujar(lapiz);
         dedoDer.dibujar(lapiz);
@@ -94,8 +97,8 @@ public class BrazoRobot {
         dedoIzq.getArticulacion().dibujar(lapiz);
         dedoDer.getArticulacion().dibujar(lapiz);
         
-        dedoIzq.getFalangeDitial().getArticulacion().dibujar(lapiz);
-        dedoDer.getFalangeDitial().getArticulacion().dibujar(lapiz);
+        dedoIzq.getHuesoUnido().getArticulacion().dibujar(lapiz);
+        dedoDer.getHuesoUnido().getArticulacion().dibujar(lapiz);
         
     }   
     

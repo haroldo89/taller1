@@ -1,6 +1,5 @@
 package com.informatica.proyecto1.logica;
 
-import lombok.Getter;
 
 /**
  *

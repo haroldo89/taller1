@@ -1,39 +1,14 @@
 package com.informatica.proyecto1.logica;
 
-import lombok.Getter;
-
 /**
  *
  * @author Vamaya
  */
-@Getter
-public class Dedo extends Hueso{
-    
-    //VARIABLES    
-    private final Hueso falangeDitial;
+public class Dedo extends HuesoConHueso{
     
     //CONSTRUCTOR
-    public Dedo(int xFinal1, int yFinal1, int xFinal2, int yFinal2,  int xInicial, int yInicial, int ancho){    
-        super(xFinal2, yFinal2, xInicial, yInicial, ancho);
-        this.falangeDitial = new Hueso(xFinal1, yFinal1, xFinal2, yFinal2, ancho);
-    }
-
-    //METODOS
-    @Override
-    public void girarHueso(int alphaGrados){
-        super.girarHueso(alphaGrados);
-        int xn = this.getXFinalDinamica();
-        int yn= this.getYFinalDinamica();
-        falangeDitial.cambiarCoordenadasBase(xn, yn);
-        
-    }
-    
-    @Override
-    public void cambiarCoordenadasBase(int xTrasladada, int yTrasladada){
-        super.cambiarCoordenadasBase(xTrasladada, yTrasladada);
-        int xnf = this.getXFinalDinamica();
-        int ynf= this.getYFinalDinamica();
-        falangeDitial.cambiarCoordenadasBase(xnf, ynf);
+    public Dedo(Hueso falangeDigital, int xFinal, int yFinal, int xInicial, int yInicial, int ancho) {
+        super(falangeDigital, xFinal, yFinal, xInicial, yInicial, ancho);
     }
     
     }

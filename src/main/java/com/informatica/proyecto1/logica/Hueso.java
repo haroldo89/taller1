@@ -16,7 +16,7 @@ public class Hueso {
     @Getter private int xFinalDinamica, yFinalDinamica, xInicial, yInicial;//Coordenadas iniciales y finales
     @Getter private final int ancho;//ancho de la linea
     @Getter private final double hipotenusa;//longitud de la linea
-    @Getter private Articulacion articulacion;
+    @Getter private final Articulacion articulacion;
     
     //CONSTRUCTOR
     public Hueso(int xFinal, int yFinal, int xInicial, int yInicial, int ancho) {

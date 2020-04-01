@@ -60,7 +60,7 @@ public class Modelo implements Runnable {
         int alphaGrados = getVentanaApp().getSldrFalangeDigIzq().getValue();
         System.out.println("Grados: " + alphaGrados);
         //getBrazo().girarFalDidIzq(alphaGrados);
-        getBrazoCompleto().getDedoIzq().getFalangeDitial().girarHueso(alphaGrados);
+        getBrazoCompleto().getDedoIzq().getHuesoUnido().girarHueso(alphaGrados);
                 //.getFalangeDigitalIzquierda().girarHueso(alphaGrados);
         dibujar();
     }
@@ -69,7 +69,7 @@ public class Modelo implements Runnable {
     public void girarFalDigDer(){
         int alphaGrados = getVentanaApp().getSldFalangeDigDer().getValue();
         System.out.println("Grados: " + alphaGrados);
-        getBrazoCompleto().getDedoDer().getFalangeDitial().girarHueso(alphaGrados);
+        getBrazoCompleto().getDedoDer().getHuesoUnido().girarHueso(alphaGrados);
                 //.getFalangeDigitalDerecha().girarHueso(alphaGrados);
                 //girarFalDidDer(alphaGrados);
         dibujar();

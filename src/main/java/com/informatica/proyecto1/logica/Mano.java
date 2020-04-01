@@ -12,7 +12,6 @@ public class Mano extends HuesoConHueso{
     @Getter private final Dedo dedoDer;
     
     //CONSTRUCTOR
-
     public Mano(Dedo dedoIzq, Dedo dedoDer, int xFinal, int yFinal, int xInicial, int yInicial, int ancho) {
         super(dedoIzq, xFinal, yFinal, xInicial, yInicial, ancho);
         this.dedoDer = dedoDer;
