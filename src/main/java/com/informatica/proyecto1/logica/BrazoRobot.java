@@ -1,6 +1,5 @@
 package com.informatica.proyecto1.logica;
 
-import com.informatica.proyecto1.utils.Constantes;
 import java.awt.Graphics;
 import lombok.Getter;
 
@@ -21,52 +20,17 @@ public class BrazoRobot {
     
     //CONSTRUCTOR
     public BrazoRobot() {
-        //Se inicializan los valores de la falange digital
-        int xiFalDig = Constantes.ANCHO_MAXIMO_CANVAS/2;
-        int yiFalDig = 0;
-        int wFalDig = 10;
-        int hFalDig = Constantes.ALTO_MAXIMO_CANVAS/10;
-
-        //Se inicializan los valores de la falange proximal
-        int xiFalProx = xiFalDig;
-        int yiFalProx = yiFalDig + hFalDig;        
-        int wFalProx = 10;
-        int hFalProx = Constantes.ALTO_MAXIMO_CANVAS/10;
         
-        dedoIzq = new Dedo(new Hueso(xiFalDig, yiFalDig, xiFalDig, yiFalDig+hFalDig, wFalDig), xiFalProx, yiFalProx, xiFalProx, yiFalProx+hFalProx, wFalProx);
-        dedoDer = new Dedo(new Hueso(xiFalDig, yiFalDig, xiFalDig, yiFalDig+hFalDig, wFalDig), xiFalProx, yiFalProx, xiFalProx, yiFalProx+hFalProx, wFalProx);
-        //dedoIzq = new Dedo(xiFalDig, yiFalDig, xiFalProx, yiFalProx, xiFalProx, yiFalProx + hFalProx, wFalProx);
-        //dedoDer = new Dedo(xiFalDig, yiFalDig, xiFalProx, yiFalProx, xiFalProx, yiFalProx + hFalProx, wFalProx);
+        dedoIzq = BrazoRobotFabrica.crearDedo();
+        dedoDer = BrazoRobotFabrica.crearDedo();
         
+        mano = BrazoRobotFabrica.crearMano(dedoIzq, dedoDer);
         
+        anteBrazo = BrazoRobotFabrica.crearAntebrazo(mano);
         
-        //Se inicializan los valores de la mano
-        int xiMano = xiFalProx;
-        int yiMano = yiFalProx + hFalProx;
-        int wMano = 20;
-        int hMano = Constantes.ALTO_MAXIMO_CANVAS*2/10;
-        
-        mano = new Mano(dedoIzq, dedoDer, xiMano, yiMano, xiMano, yiMano + hMano, wMano);
-    
-        
-        //Se inicializan los valores del antebrazo
-        int xiAnteBrazo = xiMano;
-        int yiAnteBrazo = yiMano + hMano;       
-        int wAnteBrazo = 20;
-        int hAnteBrazo = Constantes.ALTO_MAXIMO_CANVAS*3/10;
-        
-        anteBrazo = new AnteBrazo(mano, xiAnteBrazo, yiAnteBrazo, xiAnteBrazo, yiAnteBrazo + hAnteBrazo, wAnteBrazo);
-        
-        
-        //Se inicializan los valores del brazo
-        int xiBrazo = xiAnteBrazo;
-        int yiBrazo = yiAnteBrazo + hAnteBrazo;
-        int wBrazo = 20;
-        int hBrazo = Constantes.ALTO_MAXIMO_CANVAS*3/10;
-        
-        brazo = new Brazo(anteBrazo, xiBrazo, yiBrazo, xiBrazo, yiBrazo + hBrazo, wBrazo);
-        
-        base= new Base(xiBrazo, yiBrazo+hBrazo, 100, wBrazo/2);
+        brazo = BrazoRobotFabrica.crearBrazo(anteBrazo);
+                
+        base= BrazoRobotFabrica.crerBase();
     }
    
     
